@@ -5,9 +5,11 @@ Simple script to convert an image to an ANSI representation of it
 
 Prerequisites
 -
-You need to have python installed and then run the following command:
+You need to have python installed and then run the following commands:
 
 ```bash
+git clone https://github.com/Balssh/asciiart
+cd asciiart
 pip install -r requirements.txt
 ```
 

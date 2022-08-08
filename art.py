@@ -5,6 +5,7 @@
 from PIL import Image
 import numpy as np
 import argparse
+import os
 
 # list of characters used, they represend a greyscale of 40 values
 chars = list("$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft"[::-1])
@@ -73,10 +74,10 @@ def main():
     """
     image_path, width, full = parse_arguments()
     image = Image.open(image_path)
-
+    image_name = os.path.splitext(image_path)[0]
+    image_name += '_ascii_art.txt'
     new_image = image_to_ascii(rezise_image(image, width), full).strip()
-
-    with open("ascii_im.txt", "w") as f:
+    with open(image_name, "w") as f:
         f.write(new_image)
 
     print(new_image)
